@@ -109,8 +109,8 @@ final class StatusController: NSObject, NSMenuDelegate {
                 try SMAppService.mainApp.register()
             }
         } catch {
-            let alert = NSAlert(error: error)
-            alert.runModal()
+            NSApp.activate(ignoringOtherApps: true)
+            NSAlert(error: error).runModal()
         }
     }
 
