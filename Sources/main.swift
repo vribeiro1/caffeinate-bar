@@ -44,7 +44,9 @@ final class StatusController: NSObject, NSMenuDelegate {
         loginItem.target = self
         menu.addItem(loginItem)
         menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q"))
+        let quitItem = NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q")
+        quitItem.target = self
+        menu.addItem(quitItem)
 
         if let button = statusItem.button {
             button.target = self
